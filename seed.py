@@ -16,12 +16,12 @@ with open('files\\authors.json', 'r', encoding='utf-8') as file:
         )
         author.save()
 
-# Зчитуємо дані з файлу quotes.json та зберігаємо їх у колекції цитат
+
 with open('files\\qoutes.json', 'r', encoding='utf-8') as file:
     quotes_data = json.load(file)
     for quote_info in quotes_data:
         author_name = quote_info['author']
-        author = Author.objects(fullname=author_name).first()  # Знаходимо автора за ім'ям
+        author = Author.objects(fullname=author_name).first()  
         if author:
             quote = Quote(
                 tags=quote_info['tags'],
