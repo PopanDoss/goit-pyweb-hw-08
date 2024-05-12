@@ -21,7 +21,7 @@ with open('files\\qoutes.json', 'r', encoding='utf-8') as file:
     quotes_data = json.load(file)
     for quote_info in quotes_data:
         author_name = quote_info['author']
-        author = Author.objects(fullname=author_name).first()  
+        author = Author.objects(fullname=author_name)  
         if author:
             quote = Quote(
                 tags=quote_info['tags'],
